@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+}
+
+#outer {
+    position: fixed;
+    border: 2px solid black;
+    height: 500px;
+    background-color: rgba(169, 169, 169, 0.3);
+    top: 150px;
+    width: 80%;
+    left: 10%;
+    right: 10%;
+    overflow: visible;
+}
+
+#header {
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    background-color: orange;
+    padding: 10px;
+    height: 80px;
+}
+
+#header>div>img {
+    height: 100px;
+    display: inline-block;
+    margin-left: 25px;
+}
+
+#header>div>img {
+    margin-left: 5px;
+}
+
+.navbar {
+    position: absolute;
+    top: 1%;
+    border: 1px solid transparent;
+}
+
+nav {
+    position: absolute;
+    right: 2%;
+}
+
+nav ul li {
+    color: black;
+    font-size: 30px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+#side ul {
+    display: inline-block;
+}
+
+#main {
+    top: 7%;
+    left: 37%;
+    right: 37%;
+    z-index: 2;
+    position: absolute;
+}
+
+#main li,
+#main li:hover {
+    transition: 0.4s;
+}
+
+#main li:hover {
+    transform: scale(2);
+}
+
+#main ul,
+.change {
+    transition: 1s;
+}
+
+.change {
+    z-index: 3;
+    transform: translateY(600px);
+}
+
+#main>ul>li {
+    background-color: aqua;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+
+#body {
+    position: relative;
+    background-color: transparent: ;
+    height: 500px;
+}
+
+#body>div>.row {
+    height: 250px;
+}
+
+.col-sm-6>div {
+    height: 248px;
+}
+
+.col-sm-6 {
+    padding: 0px;
+    margin-bottom: -5px;
+}
+
+.item *,
+.grad span {
+    box-sizing: border-box;
+    font-family: fantasy;
+    font-size: 30px;
+}
+
+
+/*Non Gradient Part*/
+
+.item {
+    padding: 50px;
+    background-color: transparent;
+    margin: 5px;
+    height: 95%;
+    border: 2px solid black;
+}
+
+.item * {
+    display: inline-block;
+    width: 47%;
+    color: black;
+}
+
+.item span {
+    margin: 10px;
+    text-align: center;
+}
+
+
+/*Gradint Part*/
+
+.grad {
+    overflow: hidden;
+    background: rgb(30, 87, 153);
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, rgba(30, 87, 153, 1) 0%, rgba(141, 32, 122, 1) 37%, rgba(141, 32, 122, 1) 66%, rgba(7, 180, 240, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(30, 87, 153, 1) 0%, rgba(141, 32, 122, 1) 37%, rgba(141, 32, 122, 1) 66%, rgba(7, 180, 240, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(30, 87, 153, 1) 0%, rgba(141, 32, 122, 1) 37%, rgba(141, 32, 122, 1) 66%, rgba(7, 180, 240, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#07b4f0', GradientType=1);
+    color: white;
+}
+
+.grad span {
+    display: block;
+    text-align: center;
+}

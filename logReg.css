@@ -1,0 +1,47 @@
+body {
+    color: white;
+}
+
+#form-div {
+    padding: 2rem;
+    margin: 2em;
+    border-radius: 1rem;
+    background: linear-gradient(70deg, #676987, #127872);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+#form-div:hover {
+    box-shadow: 0px 0px 10px black;
+}
+
+.btn-dskd {
+    background: white;
+    border: 1px solid #127872;
+    color: #127872;
+    font-weight: bold;
+    border-radius: 3rem;
+}
+
+.btn-center {
+    display: block;
+    margin: auto!important;
+}
+
+input.stylize-input {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1) inset;
+}
+
+input.stylize-input:focus {
+    box-shadow: 0px 0px 10px black;
+    border-color: #676987;
+}
+
+.btn-dskd:hover {
+    background: linear-gradient(250deg, #676987, #127872);
+    color: white;
+    border: 1px solid black;
+}
+
+.btn-reg:hover {
+    color: black;
+}

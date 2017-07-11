@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>E-com</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="flip.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div><img src="thinking-cloud.jpg" alt="np"></div>
+        <nav id="side" class="navbar navbar-right">
+            <ul>
+                <li><i class="fa fa-mobile" aria-hidden="true"></i></li>
+                <li><i class="fa fa-opencart" aria-hidden="true"></i> </li>
+            </ul>
+        </nav>
+    </div>
+    <nav id="main" class="navbar">
+        <ul class=" change">
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item2</li>
+            <li>item4</li>
+        </ul>
+    </nav>
+    <div id="outer" class="container">
+        <div id="body" class="row">
+            <div class="col-sm-6">
+                <div class=" grad">
+                    <div class="card">
+                        <div class="face front">
+                            <div class="inner"> abc </div>
+                        </div>
+                        <div class="face back">
+                            <div class="inner"> Improved efficiency through automation </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class=" ">
+                    <div class="item"> <img src="thinking-cloud.jpg" alt="np"> <span>asd</span></div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class=" ">
+                    <div class="item"> <img src="thinking-cloud.jpg" alt="np"> <span>dasasda</span></div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class=" grad">
+                    <div class="card">
+                        <div class="face front">
+                            <div class="inner"> abc </div>
+                        </div>
+                        <div class="face back">
+                            <div class="inner"> Improved </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        setInterval(function () {
+            $('.grad').find('.card').toggleClass('flipped');
+            $('#main ul').toggleClass('change');
+        }, 5000);
+    </script>
+</body>
+
+</html>

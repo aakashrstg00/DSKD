@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DSKD | Register</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="logReg.css">
+    <script>
+        function nextPhase() {
+            console.log('nextPhase clicked!');
+            if ($("#name").val() && $("#mobile").val() && $("#email").val() && $("#pass").val() && $("#cpass").val()) {
+                if ($("#pass").val() === $("#cpass").val()) {
+                    document.getElementById("phase1").style.display = "none";
+                    //send otp to $("#mobile").val()   otp($("#mobile").val());
+                    document.getElementById("phase2").style.display = "block";
+                }
+                else {
+                    alert("Passwords don't match!");
+                }
+            }
+            else {
+                alert("Empty Fields are not appreciated!");
+            }
+        }
+
+        function register() {
+            //       submit to node server
+            if ($("#otp").val()) {
+                $.post('/register', {
+                    name: $("#name").val()
+                    , mobile: $("#mobile").val()
+                    , email: $("#email").val()
+                    , pass: $("#pass").val()
+                }).done(function (data) {
+                    alert("Registered Succssfully!");
+                }).fail(function (error) {
+                    alert("Registration Failed!");
+                });
+            }
+            else {
+                alert("Empty Fields are not appreciated!");
+            }
+            //alert("Trying to register user with name: " + $("#name").val() + ", email: " + $("#email").val() + " and password: " + $("#pass").val() + " !");
+        }
+    </script>
+</head>
+
+<body>
+    <div style="border:1px black solid; height:7em;"></div>
+    <div class="container col-md-6">
+        <div id="form-div">
+            <div>
+                <div id="phase1">
+                    <h1 class="pb-2 text-center" style="font-weight:normal!important">Create an account</h1>
+                    <div class="form-group">
+                        <label for="name" class="row pl-3"><b>Name</b></label>
+                        <input type="text" name="name" id="name" class="form-control stylize-input" autofocus> </div>
+                    <div class="form-group">
+                        <label for="mobile" class="row pl-3"><b>Mobile Number</b></label>
+                        <input type="text" name="mobile" id="mobile" class="form-control stylize-input"> </div>
+                    <div class="form-group">
+                        <label for="email" class="row pl-3"><b>Email</b></label>
+                        <input type="email" name="email" id="email" class="form-control stylize-input"> </div>
+                    <div class="form-group">
+                        <label for="pass" class="row pl-3"><b>Password</b></label>
+                        <input type="password" name="pass" id="pass" class="form-control stylize-input"> </div>
+                    <div class="form-group">
+                        <label for="cpass" class="row pl-3"><b>Confirm Password</b></label>
+                        <input type="password" name="cpass" id="cpass" class="form-control stylize-input"> </div>
+                    <br>
+                    <div class="text-center pb-3">We will send you a text to verify your phone. Message and Data rates may apply.</div>
+                    <button type="submit" class="btn btn-dskd btn-center col-lg-6" onclick="nextPhase()">Continue</button>
+                </div>
+                <div id="phase2" style="display:none;">
+                    <div class="form-group">
+                        <div class="text-center pb-5">A text with your code has been sent to your mobile number</div>
+                        <label for="otp"><strong>Enter Code</strong></label><span class="float-right"><a href="#" style="color:#a7a7a7; font-size:0.9em;">Resend OTP</a></span>
+                        <input type="number" id="otp" name="otp" maxlength="6" class="form-control"> </div>
+                    <button class="btn btn-dskd btn-center" onclick="register()">Verify</button>
+                </div>
+            </div>
+            <br>
+            <hr/> <a href="login.html" class="btn btn-outline-secondary btn-reg" style="margin:0 auto!important; display:block!important;">Already have an account? Sign in</a> </div>
+    </div>
+</body>
+
+</html>

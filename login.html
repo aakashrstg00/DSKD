@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DSKD | Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="logReg.css">
+    <script>
+        function login() {
+            //        submit to node server
+            if ($("#email").val() && $("#pass").val()) {
+                $.post('/login', {
+                    email: $("#email").val()
+                    , pass: $("#pass").val()
+                }).done(function (data) {
+                    alert("Logged In Succssfully!");
+                }).fail(function (error) {
+                    alert("Login Failed!");
+                });
+            }
+            else {
+                alert("Empty Fields are not appreciated!");
+            }
+            //alert("Trying log in with email: " + $("#email").val() + "and password: " + $("#pass").val() + " !");
+        }
+    </script>
+</head>
+
+<body>
+    <div style="border:1px black solid; height:7em;"></div>
+    <div class="container col-md-6">
+        <div id="form-div">
+            <h1 class="pb-2 text-center" style="font-weight:normal!important">Sign In</h1>
+            <div class="form-group">
+                <label for="email" class="row pl-3"><b>Email</b></label>
+                <input type="email" name="email" id="email" class="form-control stylize-input" autofocus> </div>
+            <div class="form-group">
+                <label for="pass" class="row pl-3"><b>Password </b></label>
+                <input type="password" name="pass" id="pass" class="form-control stylize-input"> </div>
+            <br>
+            <button onclick="login()" class="btn btn-dskd btn-center col-lg-6">Login</button>
+            <br><a href="/forgotpass" class="float-right pt-2" style="color:#a7a7a7; font-size:0.9em;">Forgot Password?</a>
+            <br>
+            <hr/> <a href="register.html" class="btn btn-outline-secondary btn-reg" style="margin:0 auto!important; display:block!important;">New to DSKD? Register Now</a> </div>
+    </div>
+</body>
+
+</html>
